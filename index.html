@@ -14,7 +14,14 @@
       border: 1px solid #000;
     }
     button {
+      padding: 10px 20px;
       border: 1px solid #000;
+      margin: 10px;
+    }
+    #tweet {
+      background-color: #3c93de;
+      border: none;
+      color: #fff;
     }
   </style>
 
@@ -27,12 +34,13 @@
       </a>
       すると、閲覧中のWebサイト上の文章をまとめて変更出来ます。
     </p>
-    <h1>ヤバイ変換器</h1>
+    <h1>ヤバい変換器</h1>
     <textarea id="inputs">
 すごい まずい かわいい
     </textarea>
-    ↓ <button onClick="yabaTransform()">やばい変換ボタン</button>
+    ↓ <button onClick="yabaTransform()">ヤバい変換ボタン</button>
     <textarea id="output"> </textarea>
+    <button id="tweet" onClick="tweet()">ヤバいツイートボタン</button>
     <script>
       var data = [
         "おおきい",
@@ -245,6 +253,14 @@
           regExp,
           "ヤバい"
         );
+      }
+
+      function tweet() {
+        var twtext = document.getElementById("output").value;
+        var twurl =
+          "https://twitter.com/share?url=https://nabettu.github.io/fukasawa/&text=" +
+          encodeURI(twtext + " #ヤバイ変換器");
+        window.open(twurl);
       }
     </script>
   </body>
