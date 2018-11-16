@@ -259,7 +259,8 @@
         var twtext = document.getElementById("output").value;
         var twurl =
           "https://twitter.com/share?url=https://nabettu.github.io/fukasawa/&text=" +
-          encodeURI(twtext + " #ヤバイ変換器");
+          encodeURI(twtext) +
+          "&hashtags=ヤバイ変換器";
         window.open(twurl);
       }
     </script>
